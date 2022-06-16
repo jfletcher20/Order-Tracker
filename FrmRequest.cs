@@ -1,13 +1,6 @@
 ﻿using OrderTracker.Models;
 using OrderTracker.Repositories;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace OrderTracker {
@@ -25,32 +18,28 @@ namespace OrderTracker {
         private void FrmRequest_Load(object sender, EventArgs e) {
             SetFormText();
             var requests = RequestRepository.GetRequests();
-            cboActivities.DataSource = requests;
+            cboFinancing.DataSource = requests;
         }
 
         private void SetFormText() {
-            Text = SelectedRequest.ID + " " + SelectedRequest.Rqst_description;
+            /*Text = SelectedRequest.ID + " " + SelectedRequest.Rqst_description;*/
         }
 
-        private void cboActivities_SelectedIndexChanged(object sender, EventArgs e) {
+        private void cboFinancing_SelectedIndexChanged(object sender, EventArgs e) {
 
-            var currentActivity = cboActivities.SelectedItem as Request;
-            /*txtActivityDescription.Text = currentActivity.Description;
-            txtMinForGrade.Text = currentActivity.MinPointsForGrade + "/" + currentActivity.MaxPoints;
-            txtMinForSignature.Text = currentActivity.MinPointsForSignature + "/" + currentActivity.MaxPoints;
-            numPoints.Minimum = 0;
-            numPoints.Maximum = currentActivity.MaxPoints;
-*/
-            var evaluation = OrderRepository.GetOrder(SelectedRequest/*, currentActivity*/);
-            
-            if (evaluation != null) {
-                txtTeacher.Text = evaluation.Evaluator.ToString();
-                txtEvaluationDate.Text = evaluation.EvaluationDate.ToString();
-                numPoints.Value = evaluation.Points;
+            var financingMethod = cboFinancing.SelectedItem as Request;
+
+            var request = OrderRepository.GetOrder(SelectedRequest/*, currentActivity*/);
+
+            if (request != null) {
+                /*txtTeacher.Text = request.Evaluator.ToString();
+                txtEvaluationDate.Text = request.EvaluationDate.ToString();
+                numPoints.Value = request.Points;*/
             } else {
-                txtTeacher.Text = FrmLogin.LoggedEmployee.ToString();
-                txtEvaluationDate.Text = "-";
-                numPoints.Value = 0;
+                txtEmployee.Text = FrmLogin.LoggedEmployee.ToString();
+                txtRqstDescription.Text = RequestRepository.GetRequest(0).Rqst_description;
+                var requests = RequestRepository.GetRequests();
+                dgvOffers.DataSource = requests;
             }
 
         }
@@ -60,12 +49,13 @@ namespace OrderTracker {
         }
 
         private void btnSave_Click(object sender, EventArgs e) {
-            var activity = cboActivities.SelectedItem as Request;
-            var teacher = FrmLogin.LoggedEmployee;
 
-            int points = (int)numPoints.Value;
+            var request = cboFinancing.SelectedItem as Request;
+            var employee = FrmLogin.LoggedEmployee;
 
-            teacher.PerformEvaluation(SelectedRequest, activity, points);
+            /*int points = (int)numPoints.Value;*/
+
+            employee.SubmitRequest(SelectedRequest);
             Close();
 
         }

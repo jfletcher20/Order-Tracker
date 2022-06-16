@@ -16,6 +16,8 @@ namespace OrderTracker.Repositories {
             Request request = null;
             string sql = $"SELECT * FROM Requests WHERE Id = {id}";
 
+            DB.SetConfiguration("jfletcher20_DB", "jfletcher20", "0%{m^oqc");
+
             DB.OpenConnection();
             var reader = DB.GetDataReader(sql);
 
@@ -35,6 +37,8 @@ namespace OrderTracker.Repositories {
 
             List<Request> requests = new List<Request>();
             string sql = "SELECT * FROM Requests";
+
+            DB.SetConfiguration("jfletcher20_DB", "jfletcher20", "0%{m^oqc");
 
             DB.OpenConnection();
 

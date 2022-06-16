@@ -28,12 +28,12 @@ namespace OrderTracker.Models {
             return Permissions == 4;
         }
 
-        public void PerformEvaluation(Request student, Request request, int points) {
-            var evaluation = OrderRepository.GetOrder(student/*, request*/);
-            if (evaluation == null) {
-                OrderRepository.InsertOrder(student, request, this, points);
+        public void SubmitRequest(Request request) {
+            var rqst = OrderRepository.GetOrder(request/*, request*/);
+            if (rqst == null) {
+                OrderRepository.InsertRequest(request, request, this/*, points*/);
             } else {
-                OrderRepository.UpdateOrder(evaluation, this, points);
+                OrderRepository.UpdateRequest(rqst, this/*, points*/);
             }
         }
 

@@ -25,7 +25,6 @@ namespace OrderTracker {
                 MessageBox.Show("Lozinka nije unesena!", "Problem", MessageBoxButtons.OK, MessageBoxIcon.Error);
             } else {
                 LoggedEmployee = EmployeeRepository.GetEmployee(txtUsername.Text);
-
                 if (LoggedEmployee != null && LoggedEmployee.Password == txtPassword.Text) {
                     FrmRequests frmRequests = new FrmRequests();
                     Hide();

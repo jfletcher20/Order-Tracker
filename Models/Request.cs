@@ -31,7 +31,8 @@ namespace OrderTracker.Models {
         public int Vice_dean { get; set; } // vicedean id
 
         public override string ToString() {
-            return Applicant + " zahtjeva " + ID + ": " + Rqst_description + ", status: " + Status;
+            return Financing;
+            //return Applicant + " zahtjeva " + ID + ": " + Rqst_description + ", status: " + Status;
         }
 
     }

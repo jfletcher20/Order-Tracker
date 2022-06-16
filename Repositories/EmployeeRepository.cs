@@ -16,7 +16,7 @@ namespace OrderTracker.Repositories {
         }
 
         public static Employee GetEmployee(int id) {
-            string sql = $"SELECT * FROM Employees WHERE Id = {id}";
+            string sql = $"SELECT * FROM Employees WHERE ID = {id}";
             return FetchEmployee(sql);
         }
 

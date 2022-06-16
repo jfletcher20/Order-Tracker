@@ -11,7 +11,7 @@ namespace OrderTracker.Repositories {
     public class OrderRepository {
         public static Request GetOrder(Request request) {
 
-            Request request = null;
+            Request rqst = null;
             string sql = $"SELECT * FROM Requests WHERE ID = { request.ID }";
             
             DB.OpenConnection();
@@ -19,32 +19,33 @@ namespace OrderTracker.Repositories {
 
             if (reader.HasRows) {
                 reader.Read();
-                request = CreateObject(reader);
+                rqst = CreateObject(reader);
                 reader.Close();
             }
 
             DB.CloseConnection();
-            return request;
+            return rqst;
 
         }
 
-        public static List<Order> GetEvaluations(Student student) {
-            List<Order> orders = new List<Order>();
+        public static List<Request> GetEvaluations(Request request) {
 
-            string sql = $"SELECT * FROM Evaluations WHERE IdStudents = {student.Id}";
+            List<Request> requests = new List<Request>();
+
+            string sql = $"SELECT * FROM Requests WHERE ID = {request.ID}";
 
             DB.OpenConnection();
             var reader = DB.GetDataReader(sql);
 
             while (reader.Read()) {
-                Order order = CreateObject(reader);
-                orders.Add(order);
+                Request rqst = CreateObject(reader);
+                requests.Add(rqst);
             }
 
             reader.Close();
             DB.CloseConnection();
 
-            return orders;
+            return requests;
 
         }
 
@@ -59,16 +60,16 @@ namespace OrderTracker.Repositories {
             int idTeachers = int.Parse(reader["IdTeachers"].ToString());
             var teacher = EmployeeRepository.GetEmployee(idTeachers);*/
 
-            DateTime evaluationDate = DateTime.Parse(reader["EvaluationDate"].ToString());
-            int points = int.Parse(reader["Points"].ToString());
+            /*DateTime evaluationDate = DateTime.Parse(reader["EvaluationDate"].ToString());
+            int points = int.Parse(reader["Points"].ToString());*/
 
-            var requeest = new Request {
+            var req = new Request {
                 /*Activity = activity,
                 Student = student,
                 Evaluator = teacher,
                 EvaluationDate = evaluationDate,
                 Points = points*/
-                ID = id,
+                ID = requestID,
                 /*Applicant = applicant,
                 Status = status,
                 Rqst_description = rqst_description,
@@ -85,18 +86,20 @@ namespace OrderTracker.Repositories {
                 Vice_dean = vice_dean*/
             };
 
-            return request;
+            return req;
         }
 
-        public static void InsertOrder(Request student, Request activity, Employee teacher, int points) {
-            string sql = $"INSERT INTO Evaluations (IdActivities, IdStudents, IdTeachers, EvaluationDate, Points) VALUES ({activity.ID}, {student.ID}, {teacher.Id}, GETDATE(), {points})";
+        public static void InsertRequest(Request current, Request activity, Employee teacher) {
+            /*string sql = $"INSERT INTO Requests (IdActivities, IdStudents, IdTeachers, EvaluationDate, Points) VALUES ({activity.ID}, {current.ID}, {teacher.Id}, GETDATE(), {points})";
+            DB.SetConfiguration("jfletcher20_DB", "jfletcher20", "0%{m^oqc");
             DB.OpenConnection();
             DB.ExecuteCommand(sql);
-            DB.CloseConnection();
+            DB.CloseConnection();*/
         }
 
-        public static void UpdateOrder(Order evaluation, Employee teacher, int points) {
-            string sql = $"UPDATE Evaluations SET IdTeachers = {teacher.Id},  Points = { points}, EvaluationDate = GETDATE() WHERE IdActivities = {evaluation.Activity.ID} AND IdStudents = { evaluation.Student.Id }";
+        public static void UpdateRequest(Request request, Employee employee) {
+            string sql = $"UPDATE Requests SET financing_description='Updated by {employee.Id}'";
+            DB.SetConfiguration("jfletcher20_DB", "jfletcher20", "0%{m^oqc");
             DB.OpenConnection();
             DB.ExecuteCommand(sql);
             DB.CloseConnection();

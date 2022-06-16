@@ -39,7 +39,7 @@ namespace OrderTracker
             this.txtMinForSignature = new System.Windows.Forms.TextBox();
             this.txtMinForGrade = new System.Windows.Forms.TextBox();
             this.txtActivityDescription = new System.Windows.Forms.TextBox();
-            this.txtTeacher = new System.Windows.Forms.TextBox();
+            this.txtEmployee = new System.Windows.Forms.TextBox();
             this.txtEvaluationDate = new System.Windows.Forms.TextBox();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
@@ -61,6 +61,8 @@ namespace OrderTracker
             this.LblOffers = new System.Windows.Forms.Label();
             this.BtnDeleteOffer = new System.Windows.Forms.Button();
             this.BtnOpenOffer = new System.Windows.Forms.Button();
+            this.PnlSection3 = new System.Windows.Forms.Panel();
+            this.LblSection3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.numPoints)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -68,12 +70,13 @@ namespace OrderTracker
             this.PnlSection2.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOffers)).BeginInit();
+            this.PnlSection3.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(16, 455);
+            this.label1.Location = new System.Drawing.Point(15, 517);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(54, 13);
             this.label1.TabIndex = 0;
@@ -82,7 +85,7 @@ namespace OrderTracker
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(298, 455);
+            this.label2.Location = new System.Drawing.Point(297, 517);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(80, 13);
             this.label2.TabIndex = 1;
@@ -91,7 +94,7 @@ namespace OrderTracker
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(298, 559);
+            this.label3.Location = new System.Drawing.Point(297, 621);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(84, 13);
             this.label3.TabIndex = 2;
@@ -118,7 +121,7 @@ namespace OrderTracker
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(298, 505);
+            this.label6.Location = new System.Drawing.Point(297, 567);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(43, 13);
             this.label6.TabIndex = 5;
@@ -128,15 +131,14 @@ namespace OrderTracker
             // 
             this.cboActivities.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboActivities.FormattingEnabled = true;
-            this.cboActivities.Location = new System.Drawing.Point(19, 471);
+            this.cboActivities.Location = new System.Drawing.Point(18, 533);
             this.cboActivities.Name = "cboActivities";
             this.cboActivities.Size = new System.Drawing.Size(251, 21);
             this.cboActivities.TabIndex = 6;
-            this.cboActivities.SelectedIndexChanged += new System.EventHandler(this.cboActivities_SelectedIndexChanged);
             // 
             // txtMinForSignature
             // 
-            this.txtMinForSignature.Location = new System.Drawing.Point(301, 471);
+            this.txtMinForSignature.Location = new System.Drawing.Point(300, 533);
             this.txtMinForSignature.Name = "txtMinForSignature";
             this.txtMinForSignature.ReadOnly = true;
             this.txtMinForSignature.Size = new System.Drawing.Size(100, 20);
@@ -144,7 +146,7 @@ namespace OrderTracker
             // 
             // txtMinForGrade
             // 
-            this.txtMinForGrade.Location = new System.Drawing.Point(301, 576);
+            this.txtMinForGrade.Location = new System.Drawing.Point(300, 638);
             this.txtMinForGrade.Name = "txtMinForGrade";
             this.txtMinForGrade.ReadOnly = true;
             this.txtMinForGrade.Size = new System.Drawing.Size(100, 20);
@@ -152,20 +154,20 @@ namespace OrderTracker
             // 
             // txtActivityDescription
             // 
-            this.txtActivityDescription.Location = new System.Drawing.Point(19, 498);
+            this.txtActivityDescription.Location = new System.Drawing.Point(18, 560);
             this.txtActivityDescription.Multiline = true;
             this.txtActivityDescription.Name = "txtActivityDescription";
             this.txtActivityDescription.ReadOnly = true;
             this.txtActivityDescription.Size = new System.Drawing.Size(251, 98);
             this.txtActivityDescription.TabIndex = 9;
             // 
-            // txtTeacher
+            // txtEmployee
             // 
-            this.txtTeacher.Location = new System.Drawing.Point(169, 144);
-            this.txtTeacher.Name = "txtTeacher";
-            this.txtTeacher.ReadOnly = true;
-            this.txtTeacher.Size = new System.Drawing.Size(338, 20);
-            this.txtTeacher.TabIndex = 10;
+            this.txtEmployee.Location = new System.Drawing.Point(169, 144);
+            this.txtEmployee.Name = "txtEmployee";
+            this.txtEmployee.ReadOnly = true;
+            this.txtEmployee.Size = new System.Drawing.Size(338, 20);
+            this.txtEmployee.TabIndex = 10;
             // 
             // txtEvaluationDate
             // 
@@ -199,7 +201,7 @@ namespace OrderTracker
             // 
             // numPoints
             // 
-            this.numPoints.Location = new System.Drawing.Point(301, 522);
+            this.numPoints.Location = new System.Drawing.Point(300, 584);
             this.numPoints.Name = "numPoints";
             this.numPoints.Size = new System.Drawing.Size(81, 20);
             this.numPoints.TabIndex = 14;
@@ -318,6 +320,7 @@ namespace OrderTracker
             this.cboFinancing.Name = "cboFinancing";
             this.cboFinancing.Size = new System.Drawing.Size(338, 21);
             this.cboFinancing.TabIndex = 22;
+            this.cboFinancing.SelectedIndexChanged += new System.EventHandler(this.cboFinancing_SelectedIndexChanged);
             // 
             // LblFinancing
             // 
@@ -404,11 +407,35 @@ namespace OrderTracker
             this.BtnOpenOffer.Text = "Otvori";
             this.BtnOpenOffer.UseVisualStyleBackColor = false;
             // 
+            // PnlSection3
+            // 
+            this.PnlSection3.BackColor = System.Drawing.Color.Red;
+            this.PnlSection3.Controls.Add(this.LblSection3);
+            this.PnlSection3.ForeColor = System.Drawing.Color.White;
+            this.PnlSection3.Location = new System.Drawing.Point(15, 423);
+            this.PnlSection3.Name = "PnlSection3";
+            this.PnlSection3.Size = new System.Drawing.Size(495, 30);
+            this.PnlSection3.TabIndex = 19;
+            // 
+            // LblSection3
+            // 
+            this.LblSection3.AutoSize = true;
+            this.LblSection3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.LblSection3.ForeColor = System.Drawing.Color.White;
+            this.LblSection3.Location = new System.Drawing.Point(10, 6);
+            this.LblSection3.Margin = new System.Windows.Forms.Padding(3);
+            this.LblSection3.Name = "LblSection3";
+            this.LblSection3.Size = new System.Drawing.Size(52, 17);
+            this.LblSection3.TabIndex = 7;
+            this.LblSection3.Text = "Projekt";
+            this.LblSection3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // FrmRequest
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(522, 742);
+            this.Controls.Add(this.PnlSection3);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.cboFinancing);
             this.Controls.Add(this.LblFinancing);
@@ -420,7 +447,7 @@ namespace OrderTracker
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.numPoints);
             this.Controls.Add(this.txtEvaluationDate);
-            this.Controls.Add(this.txtTeacher);
+            this.Controls.Add(this.txtEmployee);
             this.Controls.Add(this.txtActivityDescription);
             this.Controls.Add(this.txtMinForGrade);
             this.Controls.Add(this.txtMinForSignature);
@@ -445,6 +472,8 @@ namespace OrderTracker
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOffers)).EndInit();
+            this.PnlSection3.ResumeLayout(false);
+            this.PnlSection3.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -462,7 +491,7 @@ namespace OrderTracker
         private System.Windows.Forms.TextBox txtMinForSignature;
         private System.Windows.Forms.TextBox txtMinForGrade;
         private System.Windows.Forms.TextBox txtActivityDescription;
-        private System.Windows.Forms.TextBox txtTeacher;
+        private System.Windows.Forms.TextBox txtEmployee;
         private System.Windows.Forms.TextBox txtEvaluationDate;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnCancel;
@@ -484,5 +513,7 @@ namespace OrderTracker
         private System.Windows.Forms.Button BtnOpenOffer;
         private System.Windows.Forms.DataGridView dgvOffers;
         private System.Windows.Forms.Button BtnNewOffer;
+        private System.Windows.Forms.Panel PnlSection3;
+        private System.Windows.Forms.Label LblSection3;
     }
 }

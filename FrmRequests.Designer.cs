@@ -97,6 +97,7 @@
             this.BtnLogout.TabIndex = 11;
             this.BtnLogout.Text = "Odjava";
             this.BtnLogout.UseVisualStyleBackColor = false;
+            this.BtnLogout.Click += new System.EventHandler(this.BtnLogout_Click);
             // 
             // BtnGenReport
             // 

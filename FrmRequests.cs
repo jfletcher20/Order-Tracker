@@ -21,12 +21,6 @@ namespace OrderTracker {
         }
 
         private void ShowRequests() {
-            /*var students = StudentRepository.GetStudents();
-            dgvStudents.DataSource = students;
-            dgvStudents.Columns["Id"].DisplayIndex = 0;
-            dgvStudents.Columns["FirstName"].DisplayIndex = 1;
-            dgvStudents.Columns["LastName"].DisplayIndex = 2;
-            dgvStudents.Columns["Grade"].DisplayIndex = 3;*/
             var requests = RequestRepository.GetRequests();
             dgvRequests.DataSource = requests;
             dgvRequests.Columns["ID"].DisplayIndex = 0;
@@ -41,6 +35,13 @@ namespace OrderTracker {
                 FrmRequest frmEvaluation = new FrmRequest(selectedRequest);
                 frmEvaluation.ShowDialog();
             }
+        }
+
+        private void BtnLogout_Click(object sender, EventArgs e) {
+            Hide();
+            FrmLogin frmLogin = new FrmLogin();
+            frmLogin.ShowDialog();
+            Close();
         }
 
     }
