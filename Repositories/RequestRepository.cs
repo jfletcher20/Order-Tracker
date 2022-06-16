@@ -64,6 +64,14 @@ namespace OrderTracker.Repositories {
             return filtered;
         }
 
+        public static List<Request> FilterRequestsByFinancing(List<Request> requests, string filter) {
+            List<Request> filtered = new List<Request>();
+            foreach (var item in requests) {
+                if (item.Financing.Contains(filter)) filtered.Add(item);
+            }
+            return filtered;
+        }
+
         public static List<Request> GetRequestsByEmployee(Employee employee) {
             return GetRequestsByPermissions(employee);
         }

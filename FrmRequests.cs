@@ -74,7 +74,8 @@ namespace OrderTracker {
         }
 
         private void BtnGenReport_Click(object sender, EventArgs e) {
-
+            FrmGenReport frmGenReport = new FrmGenReport();
+            frmGenReport.ShowDialog();
         }
 
         private void BtnSearch_Click(object sender, EventArgs e) {
