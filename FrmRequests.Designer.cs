@@ -27,14 +27,14 @@
             this.LblScreenTitle = new System.Windows.Forms.Label();
             this.RedPanel = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lblSearchBar = new System.Windows.Forms.Label();
+            this.BtnSearch = new System.Windows.Forms.Button();
+            this.txtSearch = new System.Windows.Forms.TextBox();
             this.BtnLogout = new System.Windows.Forms.Button();
             this.BtnGenReport = new System.Windows.Forms.Button();
             this.BtnDeleteRqst = new System.Windows.Forms.Button();
             this.BtnNewRqst = new System.Windows.Forms.Button();
             this.btnEditRqst = new System.Windows.Forms.Button();
-            this.txtSearch = new System.Windows.Forms.TextBox();
-            this.BtnSearch = new System.Windows.Forms.Button();
-            this.lblSearchBar = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRequests)).BeginInit();
             this.RedPanel.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -91,6 +91,36 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1460, 57);
             this.panel1.TabIndex = 8;
+            // 
+            // lblSearchBar
+            // 
+            this.lblSearchBar.AutoSize = true;
+            this.lblSearchBar.ForeColor = System.Drawing.Color.White;
+            this.lblSearchBar.Location = new System.Drawing.Point(411, 12);
+            this.lblSearchBar.Name = "lblSearchBar";
+            this.lblSearchBar.Size = new System.Drawing.Size(178, 13);
+            this.lblSearchBar.TabIndex = 14;
+            this.lblSearchBar.Text = "Pretraživanje prema statusu čekanja";
+            // 
+            // BtnSearch
+            // 
+            this.BtnSearch.BackColor = System.Drawing.Color.White;
+            this.BtnSearch.ForeColor = System.Drawing.Color.SteelBlue;
+            this.BtnSearch.Location = new System.Drawing.Point(731, 27);
+            this.BtnSearch.Name = "BtnSearch";
+            this.BtnSearch.Size = new System.Drawing.Size(78, 23);
+            this.BtnSearch.TabIndex = 13;
+            this.BtnSearch.Text = "Traži";
+            this.BtnSearch.UseVisualStyleBackColor = false;
+            this.BtnSearch.Click += new System.EventHandler(this.BtnSearch_Click);
+            // 
+            // txtSearch
+            // 
+            this.txtSearch.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.txtSearch.Location = new System.Drawing.Point(414, 29);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(311, 20);
+            this.txtSearch.TabIndex = 12;
             // 
             // BtnLogout
             // 
@@ -158,38 +188,9 @@
             this.btnEditRqst.UseVisualStyleBackColor = false;
             this.btnEditRqst.Click += new System.EventHandler(this.btnEditRqst_Click);
             // 
-            // txtSearch
-            // 
-            this.txtSearch.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.txtSearch.Location = new System.Drawing.Point(414, 29);
-            this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(311, 20);
-            this.txtSearch.TabIndex = 12;
-            // 
-            // BtnSearch
-            // 
-            this.BtnSearch.BackColor = System.Drawing.Color.White;
-            this.BtnSearch.ForeColor = System.Drawing.Color.SteelBlue;
-            this.BtnSearch.Location = new System.Drawing.Point(731, 27);
-            this.BtnSearch.Name = "BtnSearch";
-            this.BtnSearch.Size = new System.Drawing.Size(78, 23);
-            this.BtnSearch.TabIndex = 13;
-            this.BtnSearch.Text = "Traži";
-            this.BtnSearch.UseVisualStyleBackColor = false;
-            this.BtnSearch.Click += new System.EventHandler(this.BtnSearch_Click);
-            // 
-            // lblSearchBar
-            // 
-            this.lblSearchBar.AutoSize = true;
-            this.lblSearchBar.ForeColor = System.Drawing.Color.White;
-            this.lblSearchBar.Location = new System.Drawing.Point(411, 12);
-            this.lblSearchBar.Name = "lblSearchBar";
-            this.lblSearchBar.Size = new System.Drawing.Size(178, 13);
-            this.lblSearchBar.TabIndex = 14;
-            this.lblSearchBar.Text = "Pretraživanje prema statusu čekanja";
-            // 
             // FrmRequests
             // 
+            this.AcceptButton = this.BtnSearch;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1484, 529);
