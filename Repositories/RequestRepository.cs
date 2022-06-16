@@ -56,6 +56,14 @@ namespace OrderTracker.Repositories {
 
         }
 
+        public static List<Request> FilterRequests(List<Request> requests, string filter) {
+            List<Request> filtered = new List<Request>();
+            foreach (var item in requests) {
+                if (item.Status.Contains(filter)) filtered.Add(item);
+            }
+            return filtered;
+        }
+
         public static List<Request> GetRequestsByEmployee(Employee employee) {
             return GetRequestsByPermissions(employee);
         }

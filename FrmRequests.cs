@@ -18,6 +18,8 @@ namespace OrderTracker {
         }
 
         private void FrmRequests_Load(object sender, EventArgs e) {
+            if (FrmLogin.LoggedEmployee.Permissions == 1) BtnGenReport.Visible = true;
+            else BtnGenReport.Visible = false;
             ShowRequests();
         }
 
@@ -70,5 +72,15 @@ namespace OrderTracker {
                 Close();
             }
         }
+
+        private void BtnGenReport_Click(object sender, EventArgs e) {
+
+        }
+
+        private void BtnSearch_Click(object sender, EventArgs e) {
+            dgvRequests.DataSource = RequestRepository.FilterRequests(RequestRepository.GetRequestsByEmployee(FrmLogin.LoggedEmployee),
+                txtSearch.Text);
+        }
+
     }
 }
