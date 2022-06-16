@@ -189,8 +189,8 @@ namespace OrderTracker.Repositories {
                 $"'{status}', '{bookkeeping}', '{vice_dean}'," +
                 $"'{project_leader}', '{projectID}', '{project_name}'," +
                 $"'{financing_description}', '{ponuda1_s_pdv}'," +
-                $"'{ponuda2_s_pdv}', '{ponuda1_bez_pdv}'," +
-                $"'{ponuda2_bez_pdv}', '{ponuda1_odabrana}'," +
+                $"'{ponuda1_bez_pdv}', '{ponuda1_odabrana}'," +
+                $"'{ponuda2_s_pdv}', '{ponuda2_bez_pdv}'," +
                 $"'{ponuda2_odabrana}', '{rqst_description}')";
             DB.SetConfiguration("jfletcher20_DB", "jfletcher20", "0%{m^oqc");
             DB.OpenConnection();

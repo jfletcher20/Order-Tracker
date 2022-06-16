@@ -24,7 +24,7 @@ namespace OrderTracker {
             var requests = RequestRepository.GetRequests();
             cboFinancing.SelectedItem = request;
             if (mode == "INSERT") {
-                txtEmployee.Text = EmployeeRepository.GetEmployee(SelectedRequest.Applicant).ToString();
+                txtEmployee.Text = EmployeeRepository.GetEmployee(FrmLogin.LoggedEmployee.Id).ToString();
                 txtRqstDescription.Text = SelectedRequest.Rqst_description;
                 txtStatus.Text = SelectedRequest.Status.ToString();
                 return;
