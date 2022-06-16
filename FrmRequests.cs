@@ -12,6 +12,7 @@ using System.Windows.Forms;
 
 namespace OrderTracker {
     public partial class FrmRequests : Form {
+
         public FrmRequests() {
             InitializeComponent();
         }
@@ -21,7 +22,7 @@ namespace OrderTracker {
         }
 
         private void ShowRequests() {
-            var requests = RequestRepository.GetRequests();
+            var requests = RequestRepository.GetRequestsByEmployee(FrmLogin.LoggedEmployee);
             dgvRequests.DataSource = requests;
             dgvRequests.Columns["ID"].DisplayIndex = 0;
             dgvRequests.Columns["project_name"].DisplayIndex = 1;
@@ -32,8 +33,11 @@ namespace OrderTracker {
         private void btnEditRqst_Click(object sender, EventArgs e) {
             Request selectedRequest = dgvRequests.CurrentRow.DataBoundItem as Request;
             if (selectedRequest != null) {
-                FrmRequest frmEvaluation = new FrmRequest(selectedRequest);
-                frmEvaluation.ShowDialog();
+                Hide();
+                FrmRequest frmRequest = new FrmRequest(selectedRequest);
+                frmRequest.mode = "UPDATE";
+                frmRequest.ShowDialog();
+                Close();
             }
         }
 
@@ -44,5 +48,27 @@ namespace OrderTracker {
             Close();
         }
 
+        private void BtnNewRqst_Click(object sender, EventArgs e) {
+            Hide();
+            Request rqst = new Request();
+            rqst.ID = new Random().Next(10, 1000000000);
+            rqst.Rqst_description = "Opis";
+            rqst.Status = "Ceka na odobrenje od voditelja/ice projekta.";
+            FrmRequest frmRequest = new FrmRequest(rqst);
+            frmRequest.mode = "INSERT";
+            frmRequest.ShowDialog();
+            Close();
+        }
+
+        private void BtnDeleteRqst_Click(object sender, EventArgs e) {
+            Request selectedRequest = dgvRequests.CurrentRow.DataBoundItem as Request;
+            if (selectedRequest != null) {
+                Hide();
+                RequestRepository.DeleteRequest(selectedRequest);
+                FrmRequests frmRequests = new FrmRequests();
+                frmRequests.ShowDialog();
+                Close();
+            }
+        }
     }
 }

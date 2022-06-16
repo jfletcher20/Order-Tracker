@@ -89,16 +89,29 @@ namespace OrderTracker.Repositories {
             return req;
         }
 
-        public static void InsertRequest(Request current, Request activity, Employee teacher) {
-            /*string sql = $"INSERT INTO Requests (IdActivities, IdStudents, IdTeachers, EvaluationDate, Points) VALUES ({activity.ID}, {current.ID}, {teacher.Id}, GETDATE(), {points})";
+        public static void InsertRequest(Request request, Employee employee) {
+            string sql = $"INSERT INTO Requests VALUES ('{new Random().Next(10, 1000000000)}', '{employee.Id}', '{request.Financing}'," +
+                $"'{request.Status}', '{request.Bookkeeping}', '{request.Vice_dean}'," +
+                $"'{request.Project_leader}', '{request.Project}', '{request.Project_name}'," +
+                $"'{request.Financing_description}', '{request.Ponuda1_s_pdv}'," +
+                $"'{request.Ponuda2_s_pdv}', '{request.Ponuda1_bez_pdv}'," +
+                $"'{request.Ponuda2_bez_pdv}', '{request.Ponuda1_odabrana}'," +
+                $"'{request.Ponuda2_odabrana}', {request.Rqst_description}";
             DB.SetConfiguration("jfletcher20_DB", "jfletcher20", "0%{m^oqc");
             DB.OpenConnection();
             DB.ExecuteCommand(sql);
-            DB.CloseConnection();*/
+            DB.CloseConnection();
         }
 
         public static void UpdateRequest(Request request, Employee employee) {
-            string sql = $"UPDATE Requests SET financing_description='Updated by {employee.Id}'";
+            string sql = $"UPDATE Requests SET applicant='{employee.Id}', financing='{request.Financing}'," +
+                $"status='{request.Status}', bookkeeping='{request.Bookkeeping.ToString()}', vice_dean='{request.Vice_dean}'," +
+                $"project_leader='{request.Project_leader}', project_ID='{request.Project}', project_name='{request.Project_name}'," +
+                $"financing_description='{request.Financing_description}', ponuda1_s_pdv='{request.Ponuda1_s_pdv}'," +
+                $"ponuda2_s_pdv='{request.Ponuda2_s_pdv}', ponuda1_bez_pdv='{request.Ponuda1_bez_pdv}'," +
+                $"ponuda2_bez_pdv='{request.Ponuda2_bez_pdv}', ponuda1_odabrana='{request.Ponuda1_odabrana}'," +
+                $"ponuda2_odabrana='{request.Ponuda2_odabrana}', rqst_description='{request.Rqst_description.ToString()}'" +
+                $"WHERE ID = {request.ID}";
             DB.SetConfiguration("jfletcher20_DB", "jfletcher20", "0%{m^oqc");
             DB.OpenConnection();
             DB.ExecuteCommand(sql);

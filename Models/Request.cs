@@ -20,15 +20,17 @@ namespace OrderTracker.Models {
         public string Rqst_description { get; set; } // rqst info
         public string Financing { get; set; } // financing methode
         public string Financing_description { get; set; } // extra financing info
-        public int Offer1 { get; set; } // first offer
-        public string Offer1_description { get; set; } // first offer info
-        public int Offer2 { get; set; } // second offer
-        public string Offer2_description { get; set; } // second offer info
+        public float Ponuda1_bez_pdv { get; set; }
+        public float Ponuda1_s_pdv { get; set; }
+        public string Ponuda1_odabrana { get; set; }
+        public float Ponuda2_bez_pdv { get; set; }
+        public float Ponuda2_s_pdv { get; set; }
+        public string Ponuda2_odabrana { get; set; }
         public int Project { get; set; } // proj id
         public string Project_name { get; set; } // proj name
-        public int Project_leader { get; set; } // proj leader id
-        public int Bookkeeping { get; set; } // bookkeeper id
-        public int Vice_dean { get; set; } // vicedean id
+        public string Project_leader { get; set; } // proj leader id
+        public string Bookkeeping { get; set; } // bookkeeper id
+        public string Vice_dean { get; set; } // vicedean id
 
         public override string ToString() {
             return Financing;

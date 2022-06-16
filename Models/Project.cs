@@ -5,7 +5,11 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace OrderTracker.Models {
-    public class Student : User {
-        public int Grade { get; set; }
+    public class Project {
+        public int ID { get; set; }
+        public string Name { get; set; }
+        public int Leader { get; set; }
+
     }
+
 }

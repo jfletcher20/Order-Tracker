@@ -48,7 +48,7 @@
             this.dgvRequests.Location = new System.Drawing.Point(12, 103);
             this.dgvRequests.Name = "dgvRequests";
             this.dgvRequests.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvRequests.Size = new System.Drawing.Size(1451, 317);
+            this.dgvRequests.Size = new System.Drawing.Size(1460, 317);
             this.dgvRequests.TabIndex = 0;
             // 
             // LblScreenTitle
@@ -57,7 +57,7 @@
             this.LblScreenTitle.AutoSize = true;
             this.LblScreenTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
             this.LblScreenTitle.ForeColor = System.Drawing.Color.White;
-            this.LblScreenTitle.Location = new System.Drawing.Point(612, 27);
+            this.LblScreenTitle.Location = new System.Drawing.Point(617, 27);
             this.LblScreenTitle.Name = "LblScreenTitle";
             this.LblScreenTitle.Size = new System.Drawing.Size(240, 24);
             this.LblScreenTitle.TabIndex = 6;
@@ -70,7 +70,7 @@
             this.RedPanel.Controls.Add(this.LblScreenTitle);
             this.RedPanel.Location = new System.Drawing.Point(12, 12);
             this.RedPanel.Name = "RedPanel";
-            this.RedPanel.Size = new System.Drawing.Size(1451, 78);
+            this.RedPanel.Size = new System.Drawing.Size(1460, 78);
             this.RedPanel.TabIndex = 6;
             // 
             // panel1
@@ -83,7 +83,7 @@
             this.panel1.Controls.Add(this.btnEditRqst);
             this.panel1.Location = new System.Drawing.Point(12, 460);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1451, 57);
+            this.panel1.Size = new System.Drawing.Size(1460, 57);
             this.panel1.TabIndex = 8;
             // 
             // BtnLogout
@@ -93,7 +93,7 @@
             this.BtnLogout.ForeColor = System.Drawing.Color.White;
             this.BtnLogout.Location = new System.Drawing.Point(1326, 3);
             this.BtnLogout.Name = "BtnLogout";
-            this.BtnLogout.Size = new System.Drawing.Size(122, 51);
+            this.BtnLogout.Size = new System.Drawing.Size(131, 51);
             this.BtnLogout.TabIndex = 11;
             this.BtnLogout.Text = "Odjava";
             this.BtnLogout.UseVisualStyleBackColor = false;
@@ -104,9 +104,9 @@
             this.BtnGenReport.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.BtnGenReport.BackColor = System.Drawing.Color.SteelBlue;
             this.BtnGenReport.ForeColor = System.Drawing.Color.White;
-            this.BtnGenReport.Location = new System.Drawing.Point(1198, 3);
+            this.BtnGenReport.Location = new System.Drawing.Point(1189, 3);
             this.BtnGenReport.Name = "BtnGenReport";
-            this.BtnGenReport.Size = new System.Drawing.Size(122, 51);
+            this.BtnGenReport.Size = new System.Drawing.Size(131, 51);
             this.BtnGenReport.TabIndex = 10;
             this.BtnGenReport.Text = "Generiraj izvještaj";
             this.BtnGenReport.UseVisualStyleBackColor = false;
@@ -116,33 +116,35 @@
             this.BtnDeleteRqst.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.BtnDeleteRqst.BackColor = System.Drawing.Color.SteelBlue;
             this.BtnDeleteRqst.ForeColor = System.Drawing.Color.White;
-            this.BtnDeleteRqst.Location = new System.Drawing.Point(260, 3);
+            this.BtnDeleteRqst.Location = new System.Drawing.Point(277, 3);
             this.BtnDeleteRqst.Name = "BtnDeleteRqst";
-            this.BtnDeleteRqst.Size = new System.Drawing.Size(122, 51);
+            this.BtnDeleteRqst.Size = new System.Drawing.Size(131, 51);
             this.BtnDeleteRqst.TabIndex = 9;
             this.BtnDeleteRqst.Text = "Izbriši zahtjev";
             this.BtnDeleteRqst.UseVisualStyleBackColor = false;
+            this.BtnDeleteRqst.Click += new System.EventHandler(this.BtnDeleteRqst_Click);
             // 
             // BtnNewRqst
             // 
             this.BtnNewRqst.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.BtnNewRqst.BackColor = System.Drawing.Color.SteelBlue;
             this.BtnNewRqst.ForeColor = System.Drawing.Color.White;
-            this.BtnNewRqst.Location = new System.Drawing.Point(4, 3);
+            this.BtnNewRqst.Location = new System.Drawing.Point(3, 3);
             this.BtnNewRqst.Name = "BtnNewRqst";
-            this.BtnNewRqst.Size = new System.Drawing.Size(122, 51);
+            this.BtnNewRqst.Size = new System.Drawing.Size(131, 51);
             this.BtnNewRqst.TabIndex = 8;
             this.BtnNewRqst.Text = "Novi zahtjev";
             this.BtnNewRqst.UseVisualStyleBackColor = false;
+            this.BtnNewRqst.Click += new System.EventHandler(this.BtnNewRqst_Click);
             // 
             // btnEditRqst
             // 
             this.btnEditRqst.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.btnEditRqst.BackColor = System.Drawing.Color.SteelBlue;
             this.btnEditRqst.ForeColor = System.Drawing.Color.White;
-            this.btnEditRqst.Location = new System.Drawing.Point(132, 3);
+            this.btnEditRqst.Location = new System.Drawing.Point(140, 3);
             this.btnEditRqst.Name = "btnEditRqst";
-            this.btnEditRqst.Size = new System.Drawing.Size(122, 51);
+            this.btnEditRqst.Size = new System.Drawing.Size(131, 51);
             this.btnEditRqst.TabIndex = 7;
             this.btnEditRqst.Text = "Azuriraj zahtjev";
             this.btnEditRqst.UseVisualStyleBackColor = false;
@@ -152,7 +154,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1475, 529);
+            this.ClientSize = new System.Drawing.Size(1484, 529);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.RedPanel);
             this.Controls.Add(this.dgvRequests);

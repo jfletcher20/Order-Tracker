@@ -29,11 +29,11 @@ namespace OrderTracker.Models {
         }
 
         public void SubmitRequest(Request request) {
-            var rqst = OrderRepository.GetOrder(request/*, request*/);
+            var rqst = OrderRepository.GetOrder(request);
             if (rqst == null) {
-                OrderRepository.InsertRequest(request, request, this/*, points*/);
+                OrderRepository.InsertRequest(request, this);
             } else {
-                OrderRepository.UpdateRequest(rqst, this/*, points*/);
+                OrderRepository.UpdateRequest(request, this);
             }
         }
 
