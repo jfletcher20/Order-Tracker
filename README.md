@@ -1,5 +1,7 @@
 # Order-Tracker
-Project written for the Software Engineering course I took during my 2nd year at FOI, IPS v1.2. All rights reserved.
+Please note: The program no longer connects to the database and as a result will no longer run (or at least it should not). You can still see all the code and forms I created, though, and if you connected it to a database with all the right tables then it would work again just fine.
+The page for "forgotten password" is also no longer active.
+This is the project I made for the Software Engineering course I took during my 2nd year at FOI, IPS v1.2. All rights reserved.
 
 # Softver za provedbu nabave tehničke opreme na fakultetu
 
@@ -16,7 +18,3 @@ Traži se softversko rješenje problema provedbe nabave tehničke opreme na faku
 
 ## Zadatak
 Zadatak je [proces nabave opreme](https://github.com/foivz/pi22-zadace-jfletcher20/blob/master/Korisni%C4%8Dki%20zahtjevi%20-%20proces%20nabave%20opreme.pdf/).
-
-## Resursi
-Github Markdown sintaksa dostupna je na [ovom linku](https://guides.github.com/features/mastering-markdown/) ali i na Moodleu u sekciji Zadaće.
-Zadaće je obvezno predati u obliku Wiki stranica na ovom repozitoriju. Slike i druge artefakte koje ćete trebati na wiki stranicama smjestite u mapu dokumentacije u repozitoriju. 
